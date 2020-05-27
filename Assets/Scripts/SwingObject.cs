@@ -15,4 +15,12 @@ public class SwingObject : MonoBehaviour
     {
         rigidbody.velocity = force;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.otherCollider.tag == "Enemy")
+        {
+            ScoreController.instance.AddScore(1);
+        }
+    }
 }

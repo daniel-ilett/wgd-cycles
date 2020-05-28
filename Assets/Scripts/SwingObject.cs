@@ -18,9 +18,9 @@ public class SwingObject : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.otherCollider.tag == "Enemy")
+        if(collision.otherCollider.gameObject.CompareTag("Enemy"))
         {
-            ScoreController.instance.AddScore(1);
+            ScoreController.instance.AddScore(100);
         }
     }
 }
